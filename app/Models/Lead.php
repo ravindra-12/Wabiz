@@ -10,6 +10,7 @@ class Lead extends Model
       use HasFactory;
 
      protected $fillable = [
+        'user_id',
         'name',
         'phone',
         'source',
@@ -19,6 +20,15 @@ class Lead extends Model
     ];
 
     // Relationships
+
+    /**
+     * The user (tenant) who owns this lead.
+     */
+    public function owner()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
     public function messages()
     {
         return $this->hasMany(Message::class);
