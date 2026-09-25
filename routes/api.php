@@ -61,8 +61,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // 📱 WhatsApp Account (Multi-tenant)
     Route::get('/whatsapp-account', [WhatsAppAccountController::class, 'show']);
-    Route::post('/whatsapp-account', [WhatsAppAccountController::class, 'connect']);
     Route::put('/whatsapp-account', [WhatsAppAccountController::class, 'update']);
+    Route::post('/whatsapp-account', [WhatsAppAccountController::class, 'connect']);
     Route::delete('/whatsapp-account', [WhatsAppAccountController::class, 'disconnect']);
 
     // 🔥 Leads
